@@ -1,10 +1,14 @@
-/* Button Customization */
-.vfrc-button {
-  background-color: #2A88BE; /* Button background color */
-  color: #FFFFFF;           /* Button text color */
+/* Button Customization - increased specificity */
+.voiceflow-chat .vfrc-button,
+.vfrc-chat--overlay .vfrc-button {
+  background-color: #2A88BE !important;
+  color: #FFFFFF !important;
+  border: none !important;  /* Optional: removes any existing border */
+  transition: background-color 0.3s ease; /* Optional: smooth hover transition */
 }
 
-/* Hide the "End Chat" Button */
-.vfrc-footer--endchat {
-  display: none !important; /* Hide the End Chat button */
+/* Hide End Chat Button - increased specificity */
+.voiceflow-chat .vfrc-footer--endchat,
+.vfrc-chat--overlay .vfrc-footer--endchat {
+  display: none !important;
 }
