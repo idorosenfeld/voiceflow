@@ -26,4 +26,28 @@
   font-size: 20px !important; /* Adjust to desired size */
   line-height: 1.5 !important; /* Adjust for readability */
 }
+
+/* Change "End Chat" button text */
+.vfrc-button[label="End Chat"] {
+    font-size: 0 !important;
+}
+.vfrc-button[label="End Chat"]::after {
+    content: 'סיום שיחה' !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+}
+
+/* Change "Cancel" button text */
+.vfrc-button[label="Cancel"] {
+    font-size: 0 !important;
+}
+.vfrc-button[label="Cancel"]::after {
+    content: 'בטל' !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+}
+
+/* Change input placeholder text */
+.vfrc-input textarea::placeholder {
+    content: 'כתבו לי כאן' !important;
 }
