@@ -21,29 +21,20 @@
 }
 
 
+/* Adjust font size */
+.vfrc-system-response,
+.vfrc-user-response {
+  font-size: 16px !important; /* Larger font */
+  line-height: 1.4 !important; /* Improve spacing within text */
+}
 
-/* Increase font size for all messages with a more noticeable size */
+/* Adjust spacing between messages */
+.vfrc-chat--dialog {
+  gap: 8px !important; /* Controls vertical spacing */
+}
+
+/* Adjust spacing inside message bubbles */
 .vfrc-message {
-    font-size: 20px !important; /* Much larger font size */
-    line-height: 1.5 !important;
+  padding: 8px !important; /* Controls padding inside bubbles */
 }
 
-/* User messages font size */
-.vfrc-user-response .vfrc-message {
-    font-size: 20px !important;
-}
-
-/* Assistant messages font size */
-.vfrc-system-response .vfrc-message {
-    font-size: 20px !important;
-}
-
-/* Make sure the input text is also larger */
-.vfrc-input {
-    font-size: 20px !important;
-}
-
-/* Button text size */
-.vfrc-button {
-    font-size: 18px !important;
-}
