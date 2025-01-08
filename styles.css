@@ -1,0 +1,10 @@
+/* Button Customization */
+.vfrc-button {
+  background-color: #2A88BE; /* Button background color */
+  color: #FFFFFF;           /* Button text color */
+}
+
+/* Hide the "End Chat" Button */
+.vfrc-footer--endchat {
+  display: none !important; /* Hide the End Chat button */
+}
