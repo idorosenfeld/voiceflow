@@ -4,17 +4,18 @@
   color: #FFFFFF !important;           /* Button text color */
 }
 
-/* Multiple approaches to hide End Chat button */
-.voiceflow-chat button[label="End Chat"],
-.c-dzcdPv.vfrc-button.c-jjMiVY.vfrc-button--primary.c-bXTvXv.c-bXTvXv-XJvOL-type-warn,
-button.vfrc-button[label="End Chat"],
-.vf-footer button[label="End Chat"],
-.voiceflow-chat .vf-footer button[label="End Chat"],
-[class*="type-warn"][label="End Chat"] {
+/* Modify the close behavior */
+.vfrc-chat--overlay[aria-hidden="true"],
+.vfrc-chat--overlay.hidden {
     display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
     opacity: 0 !important;
-    position: absolute !important;
-    z-index: -1 !important;
+    visibility: hidden !important;
+    transition: none !important;
+}
+
+/* Ensure the close button is visible and clickable */
+.vfrc-header button[aria-label="Close"],
+.vfrc-header .vfrc-close-button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
 }
