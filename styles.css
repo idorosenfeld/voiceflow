@@ -4,9 +4,12 @@
   color: #FFFFFF !important;           /* Button text color */
 }
 
-/* Hide End Chat button */
-.vfrc-button--primary[label="End Chat"],
-.c-bXTvXv-XJvOL-type-warn,
-button[label="End Chat"] {
+/* Hide End Chat button using footer section */
+.vf-footer button[label="End Chat"],
+.vf-footer .vfrc-button[label="End Chat"] {
     display: none !important;
 }
+
+/* Alternative targeting for End Chat button */
+.voiceflow-chat .vf-footer button[label="End Chat"] {
+    display: none !important;
