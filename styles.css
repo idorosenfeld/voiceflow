@@ -4,12 +4,17 @@
   color: #FFFFFF !important;           /* Button text color */
 }
 
-/* Hide End Chat button using footer section */
+/* Multiple approaches to hide End Chat button */
+.voiceflow-chat button[label="End Chat"],
+.c-dzcdPv.vfrc-button.c-jjMiVY.vfrc-button--primary.c-bXTvXv.c-bXTvXv-XJvOL-type-warn,
+button.vfrc-button[label="End Chat"],
 .vf-footer button[label="End Chat"],
-.vf-footer .vfrc-button[label="End Chat"] {
+.voiceflow-chat .vf-footer button[label="End Chat"],
+[class*="type-warn"][label="End Chat"] {
     display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    z-index: -1 !important;
 }
-
-/* Alternative targeting for End Chat button */
-.voiceflow-chat .vf-footer button[label="End Chat"] {
-    display: none !important;
