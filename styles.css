@@ -22,36 +22,28 @@
 
 
 
-/* Reduce spacing in conversation window */
-.vfrc-chat--dialog {
-    padding: 8px !important; /* Reduce overall padding */
-    gap: 8px !important;     /* Reduce space between messages */
-}
-
-/* Reduce spacing between messages */
+/* Increase font size for all messages with a more noticeable size */
 .vfrc-message {
-    margin: 4px 0 !important;
-    padding: 8px !important;
+    font-size: 20px !important; /* Much larger font size */
+    line-height: 1.5 !important;
 }
 
-/* Increase font size for messages */
-.vfrc-message {
-    font-size: 16px !important; /* Adjust this value as needed */
-    line-height: 1.4 !important;
-}
-
-/* Increase font size for user messages specifically */
+/* User messages font size */
 .vfrc-user-response .vfrc-message {
-    font-size: 16px !important;
+    font-size: 20px !important;
 }
 
-/* Increase font size for assistant messages */
+/* Assistant messages font size */
 .vfrc-system-response .vfrc-message {
-    font-size: 16px !important;
+    font-size: 20px !important;
 }
 
-/* Reduce spacing between message groups */
-.vfrc-system-response,
-.vfrc-user-response {
-    margin: 4px 0 !important;
+/* Make sure the input text is also larger */
+.vfrc-input {
+    font-size: 20px !important;
+}
+
+/* Button text size */
+.vfrc-button {
+    font-size: 18px !important;
 }
