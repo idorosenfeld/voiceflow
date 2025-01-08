@@ -4,7 +4,9 @@
   color: #FFFFFF !important;           /* Button text color */
 }
 
-/* Hide the "End Chat" Button */
-.vfrc-footer--endchat {
-  display: none !important; /* Force hiding the End Chat button */
+/* Hide End Chat button */
+.vfrc-button--primary[label="End Chat"],
+.c-bXTvXv-XJvOL-type-warn,
+button[label="End Chat"] {
+    display: none !important;
 }
