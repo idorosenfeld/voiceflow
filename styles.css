@@ -69,3 +69,27 @@
     --placeholder: 'כתבו לי כאן' !important;
     -webkit-text-fill-color: initial !important;
 }
+
+
+/* !!!!all the placeholder section till here seems not to work!!!!! */
+
+
+.vfrc-chat-input--button {
+  width: 80px; /* Increase width */
+  height: 40px; /* Increase height */
+  font-size: 14px; /* Adjust text size */
+  background-color: #007bff; /* Optional: change background color */
+  color: white; /* Optional: text color */
+  border-radius: 5px; /* Optional: rounded corners */
+  border: none; /* Optional: remove border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Add the text to the button */
+.vfrc-chat-input--button::after {
+  content: "Send"; /* Replace "Send" with your desired text */
+  display: inline-block;
+}
