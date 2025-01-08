@@ -19,3 +19,39 @@
     pointer-events: auto !important;
     cursor: pointer !important;
 }
+
+
+
+/* Reduce spacing in conversation window */
+.vfrc-chat--dialog {
+    padding: 8px !important; /* Reduce overall padding */
+    gap: 8px !important;     /* Reduce space between messages */
+}
+
+/* Reduce spacing between messages */
+.vfrc-message {
+    margin: 4px 0 !important;
+    padding: 8px !important;
+}
+
+/* Increase font size for messages */
+.vfrc-message {
+    font-size: 16px !important; /* Adjust this value as needed */
+    line-height: 1.4 !important;
+}
+
+/* Increase font size for user messages specifically */
+.vfrc-user-response .vfrc-message {
+    font-size: 16px !important;
+}
+
+/* Increase font size for assistant messages */
+.vfrc-system-response .vfrc-message {
+    font-size: 16px !important;
+}
+
+/* Reduce spacing between message groups */
+.vfrc-system-response,
+.vfrc-user-response {
+    margin: 4px 0 !important;
+}
