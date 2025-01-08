@@ -20,19 +20,10 @@
     cursor: pointer !important;
 }
 
-/* Adjust font size */
-.vfrc-system-response,
-.vfrc-user-response {
-  font-size: 20px !important; /* Larger font */
-  line-height: 1.4 !important; /* Improve spacing within text */
-}
 
-/* Adjust spacing between messages */
-.vfrc-chat--dialog {
-  gap: 8px !important; /* Controls vertical spacing */
+/* Force larger font size for all messages */
+.vfrc-chat .vfrc-message {
+  font-size: 20px !important; /* Adjust to desired size */
+  line-height: 1.5 !important; /* Adjust for readability */
 }
-
-/* Adjust spacing inside message bubbles */
-.vfrc-message {
-  padding: 8px !important; /* Controls padding inside bubbles */
 }
