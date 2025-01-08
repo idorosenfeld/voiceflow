@@ -49,38 +49,23 @@
 
 
 /*placrholder!!! */
-/* Change input placeholder text */
-.vfrc-input textarea::placeholder,
-.vfrc-input textarea::-webkit-input-placeholder,
-.vfrc-input textarea:-moz-placeholder,
-.vfrc-input textarea::-moz-placeholder,
-.vfrc-input textarea:-ms-input-placeholder {
-    color: #757575 !important;
-    content: none !important;
-}
 
-/* Hide original placeholder */
-.vfrc-input textarea[placeholder="Message"] {
-    font-size: 0 !important;
-}
 
-/* Add new placeholder text */
-.vfrc-input textarea[placeholder="Message"]::before,
-.vfrc-input textarea[placeholder="Message"] {
-    font-size: 16px !important;
-}
-
-.vfrc-input textarea[placeholder="Message"]::placeholder {
-    font-size: 16px !important;
-    content: 'כתבו לי כאן' !important;
-}
-
-/* Additional targeting */
+/* Change input placeholder using the documented class */
 .vfrc-input textarea {
     font-size: 16px !important;
 }
-.vfrc-input textarea[data-placeholder],
+
 .vfrc-input textarea[placeholder] {
     font-size: 16px !important;
+}
+
+.vfrc-input textarea[placeholder="Message"] {
+    opacity: 1 !important;
+}
+
+/* Try setting the placeholder directly */
+.vfrc-input textarea[placeholder="Message"] {
     --placeholder: 'כתבו לי כאן' !important;
+    -webkit-text-fill-color: initial !important;
 }
