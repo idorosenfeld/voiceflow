@@ -19,3 +19,20 @@
     pointer-events: auto !important;
     cursor: pointer !important;
 }
+
+/* Adjust font size */
+.vfrc-system-response,
+.vfrc-user-response {
+  font-size: 20px !important; /* Larger font */
+  line-height: 1.4 !important; /* Improve spacing within text */
+}
+
+/* Adjust spacing between messages */
+.vfrc-chat--dialog {
+  gap: 8px !important; /* Controls vertical spacing */
+}
+
+/* Adjust spacing inside message bubbles */
+.vfrc-message {
+  padding: 8px !important; /* Controls padding inside bubbles */
+}
