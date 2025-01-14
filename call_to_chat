@@ -1,0 +1,41 @@
+<script type="text/javascript">
+(function(d, t) {
+    var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    v.onload = function() {
+      window.voiceflow.chat.load({
+        verify: { projectID: '67628fc3a5500434c7085873' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production',
+        assistant: {
+          stylesheet: 'https://idorosenfeld.github.io/voiceflow/styles.css'
+        }
+      }).then(() => {
+        // Initially hide the widget
+        window.voiceflow.chat.hide();
+        
+        window.voiceflow.chat.proactive.clear();
+        window.voiceflow.chat.proactive.push({ 
+          type: 'text', 
+          payload: { message: 'שלום 😊 אני נועם הנציג הדיגיטלי, כאן לכל שאלה...' }
+        });
+        
+        // Add this code to change the placeholder
+        const checkForInput = setInterval(() => {
+          const textarea = document.querySelector('.c-fYYkXN');
+          if (textarea) {
+            textarea.placeholder = "הקלד/י הודעה...";  // Your new placeholder text here
+            clearInterval(checkForInput);
+          }
+        }, 100);
+        
+        // Show the widget after 8 seconds
+        setTimeout(() => {
+          window.voiceflow.chat.show();
+        }, 8000);
+      });
+    };
+    v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; 
+    v.type = "text/javascript"; 
+    s.parentNode.insertBefore(v, s);
+})(document, 'script');
+</script>
