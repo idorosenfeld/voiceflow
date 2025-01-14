@@ -48,15 +48,6 @@
 }
 
 
-/*placrholder!!! */
-
-.vfrc-input input {
-    placeholder: "הקלד/י הודעה..." !important;
-}
-
-/* !!!!all the placeholder section till here seems not to work!!!!! */
-
-
 .vfrc-chat-input--button {
   width: 80px; /* Increase width */
   height: 40px; /* Increase height */
