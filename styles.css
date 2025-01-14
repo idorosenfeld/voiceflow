@@ -91,21 +91,17 @@
 
 
 /*input box */
-.vfrc-input input[type="text"] {
-    --placeholder: "הקלד/י הודעה..." !important;
+
+textarea.c-fYYkXN::placeholder {
+    content: "הקלד/י הודעה..." !important;
 }
 
-/* Target all major browsers */
-.vfrc-input input::placeholder,
-.vfrc-input input::-webkit-input-placeholder,
-.vfrc-input input::-moz-placeholder,
-.vfrc-input input:-ms-input-placeholder,
-.vfrc-input input:-moz-placeholder {
-    content: var(--placeholder);
+/* Or if that doesn't work, try this version: */
+.c-fYYkXN::placeholder {
+    content: "הקלד/י הודעה..." !important;
 }
 
-/* Alternative direct approach */
-[data-message-input] {
-    --placeholder: "הקלד/י הודעה..." !important;
-    placeholder: "הקלד/י הודעה..." !important;
+/* And this one as well to ensure maximum compatibility: */
+#vf-chat-input--cm5wjqwdq0001357s2ai5liax::placeholder {
+    content: "הקלד/י הודעה..." !important;
 }
