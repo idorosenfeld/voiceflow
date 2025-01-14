@@ -50,15 +50,9 @@
 
 /*placrholder!!! */
 
-
-.vfrc-input::placeholder {
-  content: ""; /* Clear existing placeholder */
+.vfrc-input input {
+    placeholder: "הקלד/י הודעה..." !important;
 }
-
-.vfrc-input input[type="text"]::placeholder {
-  content: "הקלד/י הודעה...";  /* New placeholder text */
-}
-```
 
 /* !!!!all the placeholder section till here seems not to work!!!!! */
 
