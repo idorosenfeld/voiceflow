@@ -51,25 +51,18 @@
 /*placrholder!!! */
 
 
-/* Change input placeholder using the documented class */
-.vfrc-input textarea {
-    font-size: 16px !important;
+.vfrc-input::placeholder {
+  content: ""; /* Clear existing placeholder */
 }
 
-.vfrc-input textarea[placeholder] {
-    font-size: 16px !important;
+.vfrc-input input[type="text"]::placeholder {
+  content: "הקלד/י הודעה...";  /* New placeholder text */
 }
+```
 
-.vfrc-input textarea[placeholder="Message"] {
-    opacity: 1 !important;
-}
+You can replace "הקלד/י הודעה..." with whatever text you'd like to use as the placeholder. If you want it in English instead, just replace it with your desired English text.
 
-/* Try setting the placeholder directly */
-.vfrc-input textarea[placeholder="Message"] {
-    --placeholder: 'כתבו לי כאן' !important;
-    -webkit-text-fill-color: initial !important;
-}
-
+Let me know if you'd like to customize the placeholder further, such as changing its color or style!
 
 /* !!!!all the placeholder section till here seems not to work!!!!! */
 
