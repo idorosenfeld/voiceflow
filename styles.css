@@ -88,3 +88,24 @@
    display:none;
       
 }
+
+
+/*input box */
+.vfrc-input input[type="text"] {
+    --placeholder: "הקלד/י הודעה..." !important;
+}
+
+/* Target all major browsers */
+.vfrc-input input::placeholder,
+.vfrc-input input::-webkit-input-placeholder,
+.vfrc-input input::-moz-placeholder,
+.vfrc-input input:-ms-input-placeholder,
+.vfrc-input input:-moz-placeholder {
+    content: var(--placeholder);
+}
+
+/* Alternative direct approach */
+[data-message-input] {
+    --placeholder: "הקלד/י הודעה..." !important;
+    placeholder: "הקלד/י הודעה..." !important;
+}
