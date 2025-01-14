@@ -88,8 +88,29 @@
   cursor: pointer;
 }
 
+
 /* Add the text to the button */
 .vfrc-chat-input--button::after {
-  content: "Send"; /* Replace "Send" with your desired text */
+  content: "שלח"; /* Replace "Send" with your desired text */
   display: inline-block;
+}
+
+
+/* picture of noam to button */
+
+.vfrc-launcher {
+    width:100px;
+    height:100px;
+      background-image: url('https://www.anticancer.co.il/wp-content/uploads/2025/01/doctor-chat.jpg');
+       background-color:white !important;
+       background-size:cover;
+       border-radius:0;
+      
+}
+
+
+
+.vfrc-launcher img{
+   display:none;
+      
 }
