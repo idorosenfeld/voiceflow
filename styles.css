@@ -89,6 +89,6 @@
       
 }
 
-/* Customize proactive message specifically */
-.vfrc-system-response--indicator {
-    font-size: 24px !important;  /* Increase font size */
+/* If the above doesn't work, try this more specific selector */
+.vfrc-system-response .vfrc-message {
+    font-size: 24px !important;
