@@ -89,19 +89,6 @@
       
 }
 
-
-/*input box */
-
-textarea.c-fYYkXN::placeholder {
-    content: "הקלד/י הודעה..." !important;
-}
-
-/* Or if that doesn't work, try this version: */
-.c-fYYkXN::placeholder {
-    content: "הקלד/י הודעה..." !important;
-}
-
-/* And this one as well to ensure maximum compatibility: */
-#vf-chat-input--cm5wjqwdq0001357s2ai5liax::placeholder {
-    content: "הקלד/י הודעה..." !important;
-}
+/* Customize proactive message specifically */
+.vfrc-system-response--indicator {
+    font-size: 24px !important;  /* Increase font size */
