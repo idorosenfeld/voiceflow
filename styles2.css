@@ -1,3 +1,4 @@
+
 /* Button Customization */
 .vfrc-button {
   background-color: #2A88BE !important; /* Ensure it overrides other styles */
@@ -70,25 +71,8 @@
 }
 
 
-/* picture of noam to button */
-
-.vfrc-launcher {
-    width:75px;
-    height:75px;
-      background-image: url('https://www.anticancer.co.il/wp-content/uploads/2025/01/doctor-chat.jpg');
-       background-color:white !important;
-       background-size:cover;
-       border-radius:50%;
-      
-}
-
-
-
-.vfrc-launcher img{
-   display:none;
-      
-}
-
 /* If the above doesn't work, try this more specific selector */
 .vfrc-system-response .vfrc-message {
     font-size: 24px !important;
+
+}
