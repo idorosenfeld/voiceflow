@@ -1,1 +1,94 @@
+/* Button Customization */
+.vfrc-button {
+  background-color: #2A88BE !important; /* Ensure it overrides other styles */
+  color: #FFFFFF !important;           /* Button text color */
+}
 
+/* Modify the close behavior */
+.vfrc-chat--overlay[aria-hidden="true"],
+.vfrc-chat--overlay.hidden {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: none !important;
+}
+
+/* Ensure the close button is visible and clickable */
+.vfrc-header button[aria-label="Close"],
+.vfrc-header .vfrc-close-button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+
+/* Force larger font size for all messages */
+.vfrc-chat .vfrc-message {
+  font-size: 18px !important; /* Adjust to desired size */
+  line-height: 1.5 !important; /* Adjust for readability */
+}
+
+/* Change "End Chat" button text */
+.vfrc-button[label="End Chat"] {
+    font-size: 0 !important;
+}
+.vfrc-button[label="End Chat"]::after {
+    content: 'סיום שיחה' !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+}
+
+/* Change "Cancel" button text */
+.vfrc-button[label="Cancel"] {
+    font-size: 0 !important;
+}
+.vfrc-button[label="Cancel"]::after {
+    content: 'בטל' !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+}
+
+
+.vfrc-chat-input--button {
+  width: 80px; /* Increase width */
+  height: 40px; /* Increase height */
+  font-size: 14px; /* Adjust text size */
+  background-color: #007bff; /* Optional: change background color */
+  color: white; /* Optional: text color */
+  border-radius: 5px; /* Optional: rounded corners */
+  border: none; /* Optional: remove border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+/* Add the text to the button */
+.vfrc-chat-input--button::after {
+  content: "שלח"; /* Replace "Send" with your desired text */
+  display: inline-block;
+}
+
+
+/* picture of noam to button */
+
+.vfrc-launcher {
+    width:75px;
+    height:75px;
+      background-image: url('https://www.anticancer.co.il/wp-content/uploads/2025/01/doctor-chat.jpg');
+       background-color:white !important;
+       background-size:cover;
+       border-radius:50%;
+      
+}
+
+
+
+.vfrc-launcher img{
+   display:none;
+      
+}
+
+/* If the above doesn't work, try this more specific selector */
+.vfrc-system-response .vfrc-message {
+    font-size: 24px !important;
