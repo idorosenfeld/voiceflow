@@ -1,0 +1,43 @@
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '67628fc3a5500434c7085873' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          assistant: {
+            stylesheet: 'https://www.anticancer.co.il/wp-content/themes/hello-theme-child-master/chat2.css'
+          }
+        }).then(() => {
+          // הצ'אט מוסתר בהתחלה
+          window.voiceflow.chat.hide();
+
+          // מוצג אחרי 8 שניות
+          setTimeout(() => {
+            window.voiceflow.chat.show();
+          }, 000);
+        });
+      };
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
+
+<!-- ✅ האזנה לאירועים מותאמים אישית מ-Voiceflow -->
+<script>
+  window.addEventListener('message', (e) => {
+    const data = e.data;
+
+    // מזהה את האירוע שהגדרת ב-Voiceflow
+    if (data && data.type === 'voiceflow_event' && data.event === 'phone_number_submitted') {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'phone_number_submitted',
+        phone: data.phone || '(not provided)'  // אם יש מספר – נשלח אותו, אחרת טקסט כללי
+      });
+      console.log("📞 phone_number_submitted event pushed to dataLayer", data);
+    }
+  });
+</script>
