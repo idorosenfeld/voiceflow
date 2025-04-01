@@ -1,0 +1,85 @@
+<script>
+  // משתנה גלובלי שישמור את המזהה של הפנייה האחרונה שעיבדנו
+  let lastProcessedUserTurnId = null;
+
+  window.addEventListener('message', (e) => {
+    const data = e.data;
+
+    // לוג גולמי לדיבאג (אפשר להסיר בהמשך)
+    // console.log("📥 קיבלתי הודעה מהצ'אט:", data);
+
+    // ודא שזה מחרוזת טקסט
+    if (typeof data === 'string') {
+      try {
+        const parsed = JSON.parse(data);
+
+        // --- נתמקד רק באירועים שמכילים היסטוריית פניות ('turns') ---
+        if (parsed && parsed.payload && Array.isArray(parsed.payload.turns)) {
+          const turns = parsed.payload.turns;
+          // סנן רק פניות של המשתמש
+          const userTurns = turns.filter(turn => turn.type === "user");
+
+          // ודא שיש פניות משתמש
+          if (userTurns.length > 0) {
+            // קח את הפנייה האחרונה של המשתמש
+            const lastUserTurn = userTurns[userTurns.length - 1];
+            const userMessage = lastUserTurn?.message || "";
+            const currentTurnId = lastUserTurn?.id; // קח את המזהה הייחודי של הפנייה
+
+            // --- בדיקה למניעת עיבוד כפול ---
+            // אם המזהה הנוכחי זהה לזה שכבר עיבדנו, התעלם מהאירוע הנוכחי
+            if (currentTurnId && currentTurnId === lastProcessedUserTurnId) {
+              console.log(`כבר עיבדנו את פנייה ${currentTurnId}, מתעלמים מהודעה זו.`);
+              return; // צא מהפונקציה כדי למנוע עיבוד נוסף
+            }
+
+            // --- המשך עיבוד רק אם זו פנייה חדשה ---
+            if (userMessage && currentTurnId) {
+              console.log(`מעבד פנייה חדשה: ${currentTurnId}. הודעה:`, userMessage);
+
+              let eventWasPushed = false; // דגל לבדוק אם דחפנו אירוע כלשהו בפנייה זו
+
+              // --- בדיקה עבור מספר טלפון ---
+              const phoneRegex = /\b05\d{8}\b/;
+              const phoneMatch = userMessage.match(phoneRegex);
+              if (phoneMatch) {
+                const phoneNumber = phoneMatch[0];
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: 'lead_generated',
+                  phone: phoneNumber
+                });
+                console.log(`📤 lead_generated נשלח ל-dataLayer (פנייה ${currentTurnId})`);
+                eventWasPushed = true; // סמן שדחפנו אירוע
+              }
+
+              // --- בדיקה עבור הודעת קישור לוואטסאפ ---
+              const whatsappPhrase = "לשיחה בווטסאפ עם נציג מקצועי";
+              const cleanUserMessage = userMessage.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE00}-\u{FE0F}\u{1F900}-\u{1F9FF}\u{1FA70}-\u{1FAFF}]/gu, '').trim();
+              if (cleanUserMessage.includes(whatsappPhrase)) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: 'linked_to_whatsapp'
+                });
+                console.log(`📤 linked_to_whatsapp נשלח ל-dataLayer (פנייה ${currentTurnId})`);
+                eventWasPushed = true; // סמן שדחפנו אירוע
+              }
+
+              // --- עדכון המזהה האחרון שעיבדנו ---
+              // עדכן את המזהה רק אם דחפנו אירוע כלשהו בפנייה זו
+              if (eventWasPushed) {
+                lastProcessedUserTurnId = currentTurnId;
+                console.log(`עדכון המזהה האחרון שעובד: ${lastProcessedUserTurnId}`);
+              } else {
+                 console.log(`לא נשלח אירוע DataLayer עבור פנייה ${currentTurnId}, לא מעדכנים ID.`);
+              }
+            }
+          }
+        }
+      } catch (err) {
+        // שגיאה בפענוח JSON או בעיבוד, הדפס לוג במידת הצורך
+        // console.warn("שגיאה בעיבוד הודעה:", err, data);
+      }
+    }
+  });
+</script>
