@@ -13,10 +13,10 @@
           // הצ'אט מוסתר בהתחלה
           window.voiceflow.chat.hide();
 
-          // מוצג אחרי 8 שניות
+          // מוצג אחרי 7 שניות
           setTimeout(() => {
             window.voiceflow.chat.show();
-          }, 000);
+          }, 7000);
         });
       };
       v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
